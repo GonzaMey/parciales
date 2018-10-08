@@ -1,0 +1,60 @@
+# depslib dependency file v1.0
+1539009731 source:c:\users\alumno\desktop\mey.gonzalo.1a\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juegos.h"
+
+1539001910 c:\users\alumno\desktop\mey.gonzalo.1a\juegos.h
+
+1539008591 source:c:\users\alumno\desktop\mey.gonzalo.1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+	"juegos.h"
+	"alquileres.h"
+	"ejecutar.h"
+
+1539009403 source:c:\users\alumno\desktop\mey.gonzalo.1a\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+
+1539000687 c:\users\alumno\desktop\mey.gonzalo.1a\cliente.h
+
+1538965116 c:\users\alumno\desktop\mey.gonzalo.1a\utn.h
+
+1539006668 source:c:\users\alumno\desktop\mey.gonzalo.1a\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1539007123 source:c:\users\alumno\desktop\mey.gonzalo.1a\ejecutar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"juegos.h"
+	"cliente.h"
+	"alquileres.h"
+
+1539007822 source:c:\users\alumno\desktop\mey.gonzalo.1a\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"juegos.h"
+	"alquileres.h"
+
+1539011109 c:\users\alumno\desktop\mey.gonzalo.1a\alquileres.h
+
+1539006980 c:\users\alumno\desktop\mey.gonzalo.1a\ejecutar.h
+	"juegos.h"
+	"utn.h"
+	"cliente.h"
+
