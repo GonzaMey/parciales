@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1538941095 source:c:\users\kobe\desktop\ejercitacion_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"ejecutar.h"
+	"utn.h"
+	"empleado.h"
+
+1538861733 source:c:\users\kobe\desktop\ejercitacion_parcial\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1538565398 c:\users\kobe\desktop\ejercitacion_parcial\utn.h
+
+1538861592 c:\users\kobe\desktop\ejercitacion_parcial\menu.h
+
+1538940991 c:\users\kobe\desktop\ejercitacion_parcial\ejecutar.h
+	"menu.h"
+	"utn.h"
+	"empleado.h"
+
+1538964032 source:c:\users\kobe\desktop\ejercitacion_parcial\ejecutar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"menu.h"
+	"empleado.h"
+
+1538862258 source:c:\users\kobe\desktop\ejercitacion_parcial\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+
+1538963822 c:\users\kobe\desktop\ejercitacion_parcial\empleado.h
+
+1538964032 source:c:\users\kobe\desktop\ejercitacion_parcial\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+
