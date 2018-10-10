@@ -70,7 +70,7 @@ int main()
 
     //FUNCION DE HARDCODEO DE JUEGOS Y CLIENTES
     juegos_harcodear(juegos);
-    cliente_harcodear(clientes);
+    //cliente_harcodear(clientes);
 
 
     //INICIO DE DE WHILE

@@ -23,6 +23,7 @@ int getStringNumerosFlotantes(char mensaje[],char input[]);
 int getValidString(char requestMessage[],char errorMessage[], char errorMessageLenght[],char input[], int maxLenght,int attemps);
 int getValidInt(char requestMessage[],char errorMessage[], int* input,int lowLimit, int hiLimit,int attemps);
 int getValidFloat(char requestMessage[],char errorMessage[], float* input,float lowLimit, float hiLimit,int attemps);
+char getValidSexo(char requestMessage[],char errorMessage[],char input,int attemps);
 
 void clearStdin(void);
 void pause(void);

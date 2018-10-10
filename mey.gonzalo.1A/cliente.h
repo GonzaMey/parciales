@@ -11,7 +11,7 @@ typedef struct{
     int legajo;
     char nombre[51];
     char apellido[51];
-    char sexo[3];
+    char sexo;
     char domicilio[51];
     int flagEstado;
 
@@ -22,7 +22,7 @@ typedef struct{
 
 int clientes_init(eCliente* cliente, int cliente_tam);
 
-int cliente_agregar(eCliente* cliente, int cliente_tam,char nombre[],char apellido[],char sexo[],char domicilio[]);
+int cliente_agregar(eCliente* cliente, int cliente_tam,char nombre[],char apellido[],char sexo,char domicilio[]);
 
 int cliente_findEmptyPlace(eCliente* cliente, int cliente_tam);
 
@@ -32,7 +32,7 @@ int cliente_borrar(eCliente* cliente, int cliente_tam, int legajo);
 
 eCliente* cliente_buscar(eCliente* cliente, int cliente_tam, int legajo);
 
-int cliente_modificar(eCliente* cliente, int cliente_tam, int legajo, char nombre[],char apellido[],char sexo[],char domicilio[]);
+int cliente_modificar(eCliente* cliente, int cliente_tam, int legajo, char nombre[],char apellido[],char sexo,char domicilio[]);
 
 void cliente_mostrar(eCliente cliente, int cliente_tam);
 

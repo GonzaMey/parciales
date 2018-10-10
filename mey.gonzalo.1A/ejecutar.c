@@ -32,7 +32,7 @@ int ejecutar_nuevoCliente(eCliente cliente[], int cliente_tam)
 {
     char nombre[51];
     char apellido[51];
-    char sexo[2];
+    char sexo = 'p';
     char domicilio[51];
     int retorno=-1;
 
@@ -43,16 +43,15 @@ int ejecutar_nuevoCliente(eCliente cliente[], int cliente_tam)
          retorno = getValidString("\nApellido: ","\nNo es un apellido valido","\nLongitud maxima 51", apellido,51,3);
          if(retorno == 0)
          {
-              retorno = getValidString("\nSexo: ","\nNo es un sexo valido","\nLongitud maxima una letra",sexo,3,3);
-              if(retorno == 0)
-              {
+              sexo = getValidSexo("\nSexo: ","\nNo es un sexo valido",sexo,3);
+
                     retorno = getValidString("\nDomicilio: ","\nNo es un Domicilio valido","\nLongitud maxima 51", domicilio,51,3);
                     if(retorno == 0)
                         {
                                 retorno = cliente_agregar(cliente,cliente_tam,nombre,apellido,sexo,domicilio);
                         }
-                }
-        }
+          }
+
 
     }
 
@@ -108,7 +107,7 @@ int ejecutar_modificarCliente(eCliente* cliente, int cliente_tam)
 {
     char nombre[51];
     char apellido[51];
-    char sexo[2];
+    char sexo = 'q';
     char domicilio[51];
     int legajo;
 
@@ -116,7 +115,7 @@ int ejecutar_modificarCliente(eCliente* cliente, int cliente_tam)
 
     system("cls");
     cliente_listarClientes(cliente,cliente_tam);
-    retorno = getValidInt("\nLegajo a Modificar: ","\nRango valido 1000-9999", &legajo,1000,9999,3);
+    retorno = getValidInt("\nLegajo a Modificar: ","\nRango valido 1000-9999", &legajo,1,9999,3);
 
     if(retorno == 0)
     {
@@ -134,7 +133,7 @@ int ejecutar_modificarCliente(eCliente* cliente, int cliente_tam)
                  retorno = getValidString("\nApellido: ","\nNo es un Apellido valido","\nLongitud maxima 51", apellido,51,3);
                 if(retorno == 0)
                     {
-                        retorno = getValidString("\nSexo: ","\nNo es un Sexo valido","\nLongitud maxima sexo un caracter",sexo,3,3);
+                        retorno = getValidSexo("\nSexo: ","\nNo es un Sexo valido",sexo,3);
                         if(retorno == 0)
                         {
                             retorno = getValidString("\nDomicilio: ","\nNo es un Domicilio valido","\nLongitud maxima 51",domicilio,51,3);
@@ -189,7 +188,7 @@ int ejecutar_borrarCliente(eCliente* cliente, int cliente_tam)
 
     system("cls");
     cliente_listarClientes(cliente,cliente_tam);
-    retorno = getValidInt("\nLegajo a dar de Baja: ","\nRango valido 1000-9999", &legajo,1000,9999,3);
+    retorno = getValidInt("\nLegajo a dar de Baja: ","\nRango valido 1000-9999", &legajo,1,9999,3);
 
     if(retorno == 0)
     {

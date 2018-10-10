@@ -21,7 +21,7 @@ int clientes_init(eCliente* cliente, int cliente_tam)
 }
 //-------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------
-int cliente_agregar(eCliente* cliente, int cliente_tam,char nombre[],char apellido[],char sexo[],char domicilio[])
+int cliente_agregar(eCliente* cliente, int cliente_tam,char nombre[],char apellido[],char sexo,char domicilio[])
 {
 
     int retorno=-1;
@@ -31,10 +31,10 @@ int cliente_agregar(eCliente* cliente, int cliente_tam,char nombre[],char apelli
         index = cliente_findEmptyPlace(cliente, cliente_tam);
         if(index != -1)
         {
-            legajo = 1000+cliente_findNextId(cliente, cliente_tam);
+            legajo = 1+cliente_findNextId(cliente, cliente_tam);
             strcpy((cliente+index)->nombre,nombre);
             strcpy((cliente+index)->apellido,apellido);
-            strcpy((cliente+index)->sexo,sexo);
+            cliente[index].sexo = sexo;
             strcpy((cliente+index)->domicilio,domicilio);
             (cliente+index)->legajo = legajo;
             (cliente+index)->flagEstado = CLIENTE_CARGADO;
@@ -133,7 +133,7 @@ eCliente* cliente_buscar(eCliente* cliente, int cliente_tam, int legajo)
 //-------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------
 
-int cliente_modificar(eCliente* cliente, int cliente_tam, int legajo, char nombre[],char apellido[],char sexo[],char domicilio[])
+int cliente_modificar(eCliente* cliente, int cliente_tam, int legajo, char nombre[],char apellido[],char sexo,char domicilio[])
 {
     int retorno=-1;
     eCliente* auxCliente;
@@ -145,7 +145,7 @@ int cliente_modificar(eCliente* cliente, int cliente_tam, int legajo, char nombr
         {
             strcpy(auxCliente->nombre,nombre);
             strcpy(auxCliente->apellido,apellido);
-            strcpy(auxCliente->sexo,sexo);
+            auxCliente->sexo = sexo;
             strcpy(auxCliente->domicilio,domicilio);
             retorno=0;
         }
@@ -160,7 +160,7 @@ int cliente_modificar(eCliente* cliente, int cliente_tam, int legajo, char nombr
 void cliente_mostrar(eCliente cliente, int cliente_tam)
 {
 
-    printf("%d %s %s %s %s \n\n", cliente.legajo, cliente.nombre, cliente.apellido,cliente.sexo,cliente.domicilio);
+    printf("%d %s %s %c %s \n\n", cliente.legajo, cliente.nombre, cliente.apellido,cliente.sexo,cliente.domicilio);
 
 }
 
@@ -204,13 +204,13 @@ void cliente_harcodear(eCliente y[])
 
     eCliente x[]=
     {
-        {1000,"Roberto","Gimenez","m","Iriarte 1647",CLIENTE_CARGADO},
-        {1001,"Franco","Gonzalez","m","Pinzon 745",CLIENTE_CARGADO},
-        {1002,"Juan","Perez","m","Montes de Oca 1548",CLIENTE_CARGADO},
-        {1003,"Gonzalo","Mey","m","Juana Manso 35",CLIENTE_CARGADO},
-        {1004,"Brian","Lamela","m","Isabel la Catolica 654",CLIENTE_CARGADO},
-        {1005,"Alan","Martinez","m","Peru 756",CLIENTE_CARGADO},
-        {1006,"Anuel","AA","m","Bolivar 45",CLIENTE_CARGADO},
+        {1000,"Roberto","Gimenez",'m',"Iriarte 1647",CLIENTE_CARGADO},
+        {1001,"Franco","Gonzalez",'m',"Pinzon 745",CLIENTE_CARGADO},
+        {1002,"Juan","Perez",'m',"Montes de Oca 1548",CLIENTE_CARGADO},
+        {1003,"Gonzalo","Mey",'m',"Juana Manso 35",CLIENTE_CARGADO},
+        {1004,"Brian","Lamela",'m',"Isabel la Catolica 654",CLIENTE_CARGADO},
+        {1005,"Alan","Martinez",'m',"Peru 756",CLIENTE_CARGADO},
+        {1006,"Anuel","AA",'m',"Bolivar 45",CLIENTE_CARGADO},
     };
 
     for(int i=0; i<7; i++)

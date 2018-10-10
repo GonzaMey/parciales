@@ -410,3 +410,25 @@ void clearScreen(void)
     system("cls"); //system("cls");
 }
 
+
+
+char getValidSexo(char requestMessage[],char errorMessage[],char input,int attemps)
+{
+    int i;
+    char buffer;
+
+    for(i=0;i<attemps;i++)
+    {
+     buffer = getChar(requestMessage);
+       while(buffer != 'm' && buffer != 'f' )
+        {
+        printf("%s" ,errorMessage);
+        buffer = getChar(requestMessage);
+
+        }
+
+        break;
+    }
+    return buffer;
+}
+

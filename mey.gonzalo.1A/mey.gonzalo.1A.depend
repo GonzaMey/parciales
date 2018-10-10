@@ -58,3 +58,62 @@
 	"utn.h"
 	"cliente.h"
 
+1538996826 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"juegos.h"
+	"alquileres.h"
+
+1539141049 c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\utn.h
+
+1539137812 c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\cliente.h
+
+1538996826 c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\juegos.h
+
+1538996826 c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\alquileres.h
+
+1539140147 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+
+1538996826 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juegos.h"
+
+1539138264 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+	"juegos.h"
+	"alquileres.h"
+	"ejecutar.h"
+
+1538996826 c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\ejecutar.h
+	"juegos.h"
+	"utn.h"
+	"cliente.h"
+
+1539141078 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1539141097 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\ejecutar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"juegos.h"
+	"cliente.h"
+	"alquileres.h"
+
