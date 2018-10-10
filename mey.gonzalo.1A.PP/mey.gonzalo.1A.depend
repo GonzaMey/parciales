@@ -1,0 +1,191 @@
+# depslib dependency file v1.0
+1539009731 source:c:\users\alumno\desktop\mey.gonzalo.1a\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juegos.h"
+
+1539001910 c:\users\alumno\desktop\mey.gonzalo.1a\juegos.h
+
+1539008591 source:c:\users\alumno\desktop\mey.gonzalo.1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+	"juegos.h"
+	"alquileres.h"
+	"ejecutar.h"
+
+1539009403 source:c:\users\alumno\desktop\mey.gonzalo.1a\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+
+1539000687 c:\users\alumno\desktop\mey.gonzalo.1a\cliente.h
+
+1538965116 c:\users\alumno\desktop\mey.gonzalo.1a\utn.h
+
+1539006668 source:c:\users\alumno\desktop\mey.gonzalo.1a\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1539007123 source:c:\users\alumno\desktop\mey.gonzalo.1a\ejecutar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"juegos.h"
+	"cliente.h"
+	"alquileres.h"
+
+1539007822 source:c:\users\alumno\desktop\mey.gonzalo.1a\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"juegos.h"
+	"alquileres.h"
+
+1539011109 c:\users\alumno\desktop\mey.gonzalo.1a\alquileres.h
+
+1539006980 c:\users\alumno\desktop\mey.gonzalo.1a\ejecutar.h
+	"juegos.h"
+	"utn.h"
+	"cliente.h"
+
+1538996826 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"juegos.h"
+	"alquileres.h"
+
+1539141049 c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\utn.h
+
+1539137812 c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\cliente.h
+
+1538996826 c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\juegos.h
+
+1538996826 c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\alquileres.h
+
+1539140147 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+
+1538996826 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juegos.h"
+
+1539138264 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+	"juegos.h"
+	"alquileres.h"
+	"ejecutar.h"
+
+1538996826 c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\ejecutar.h
+	"juegos.h"
+	"utn.h"
+	"cliente.h"
+
+1539141078 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1539141097 source:c:\users\kobe\desktop\parciales-master\mey.gonzalo.1a\ejecutar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"juegos.h"
+	"cliente.h"
+	"alquileres.h"
+
+1539183403 source:c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"juegos.h"
+	"alquileres.h"
+
+1539141298 c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\utn.h
+
+1539179367 c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\cliente.h
+
+1539183148 c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\juegos.h
+
+1539141298 c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\alquileres.h
+
+1539182541 source:c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+
+1539181566 source:c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\ejecutar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"juegos.h"
+	"cliente.h"
+	"alquileres.h"
+
+1539181223 source:c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juegos.h"
+
+1539141298 source:c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1539183245 source:c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+	"juegos.h"
+	"alquileres.h"
+	"ejecutar.h"
+	"informes.h"
+
+1539141298 c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\ejecutar.h
+	"juegos.h"
+	"utn.h"
+	"cliente.h"
+
+1539182761 source:c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\informes.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+	"juegos.h"
+	"alquileres.h"
+	"ejecutar.h"
+	"informes.h"
+
+1539180683 c:\users\alumno\desktop\parciales-master\mey.gonzalo.1a\informes.h
+
