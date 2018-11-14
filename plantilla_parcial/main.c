@@ -40,18 +40,18 @@ int main()
             switch(option)
             {
                 case 1:
-                    if(flagText == 0 && flagBin == 0)
+                    if(flagText == 0 && flagBin == 0) //Verifico que aun no se haya cargado ningun archivo.
                     {
                         controller_loadFromText(ARCH_CSV,listaEmpleados);
                         flagText = 1;
                     }
                     else
                     {
-                        if(flagText == 1)
+                        if(flagText == 1)   //Si ya hay un archivo cargado en modo texto aviso al usuario
                         {
                             printf("\nLa Lista ya se cargo en modo texto.\n");
                         }
-                        if(flagBin == 1)
+                        if(flagBin == 1)    //Si ya hay un archivo cargado en modo binario aviso al usuario
                         {
                             printf("\nLa Lista ya se cargo en modo binario.\n");
                         }
@@ -61,19 +61,19 @@ int main()
                     system("pause");
                     break;
                 case 2:
-                        if(flagBin == 0 && flagText==0)
+                        if(flagBin == 0 && flagText==0) //Verifico que aun no se haya cargado ningun archivo.
                         {
                         controller_loadFromBinary(ARCH_BIN,listaEmpleados);
                         flagBin=1;
                         }
                      else
                         {
-                            if(flagText == 1)
+                            if(flagText == 1)   //Si ya hay un archivo cargado en modo texto aviso al usuario
                             {
                                 printf("\nLa Lista ya se cargo en modo texto.\n");
                             }
 
-                            if(flagBin == 1)
+                            if(flagBin == 1)    //Si ya hay un archivo cargado en modo binario aviso al usuario
                             {
                                 printf("\nLa Lista ya se cargo en modo binario.\n");
                             }
@@ -81,55 +81,55 @@ int main()
                     system("pause");
                     break;
                 case 3:
-                    if(flagText == 1    || flagBin == 1)
+                    if(flagText == 1    || flagBin == 1)    //Verifico que haya un archivo cargado
                     {
                         controller_addEmployee(listaEmpleados);
                         }
-                        else
+                        else    //Si no se cargo ningun archivo aviso al usuario.
                         {
                             printf("\nAun no se cargaron ningun archivo.\n");
                         }
                     system("pause");
                     break;
                 case 4:
-                    if(flagText == 1    || flagBin == 1)
+                    if(flagText == 1    || flagBin == 1)    //Verifico que haya un archivo cargado
                     {
                         controller_editEmployee(listaEmpleados);
                         }
-                        else
+                        else    //Si no se cargo ningun archivo aviso al usuario.
                         {
                             printf("\nAun no se cargaron ningun archivo.\n");
                         }
                     system("pause");
                     break;
                 case 5:
-                     if(flagText == 1    || flagBin == 1)
+                     if(flagText == 1    || flagBin == 1)   //Verifico que haya un archivo cargado
                         {
                         controller_removeEmployee(listaEmpleados);
                         }
-                        else
+                        else    //Si no se cargo ningun archivo aviso al usuario.
                         {
                             printf("\nAun no se cargaron ningun archivo.\n");
                         }
                     system("pause");
                     break;
                 case 6:
-                    if(flagText == 1 || flagBin == 1)
+                    if(flagText == 1 || flagBin == 1)   //Verifico que haya un archivo cargado
                         {
                         controller_ListEmployee(listaEmpleados);
                         }
-                        else
+                        else    //Si no se cargo ningun archivo aviso al usuario.
                         {
                             printf("\nAun no se cargaron empleados.\n");
                     }
                     system("pause");
                     break;
                 case 7:
-                    if(flagBin == 1 || flagText == 1)
+                    if(flagBin == 1 || flagText == 1)   //Verifico que haya un archivo cargado
                     {
                     controller_sortEmployee(listaEmpleados);
                     }
-                    else
+                    else    //Si no se cargo ningun archivo aviso al usuario.
                         {
                             printf("Aun no se cargo ningun archivo.");
 
@@ -137,22 +137,22 @@ int main()
                     system("pause");
                     break;
                 case 8:
-                    if(flagText == 1 || flagBin == 1)
+                    if(flagText == 1 || flagBin == 1)   //Verifico que haya un archivo cargado
                     {
                             controller_saveAsText(ARCH_CSV,listaEmpleados);
                         }
-                        else
+                        else    //Si no se cargo ningun archivo aviso al usuario.
                         {
                             printf("\nAun no se ha abierto ningun archivo.\n");
                     }
                     system("pause");
                     break;
                 case 9:
-                    if(flagText == 1)
+                    if(flagText == 1 || flagBin ==1)    //Verifico que haya un archivo cargado
                     {
                     controller_saveAsBinary(ARCH_BIN,listaEmpleados);
                     }
-                    else
+                    else    //Si no se cargo ningun archivo aviso al usuario.
                         {
                            printf("\nAun no se ha abierto ningun archivo.\n");
                         }

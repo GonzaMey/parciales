@@ -84,17 +84,17 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
     Employee* nuevoEmpleado;
 
     nuevoEmpleado = employee_new();
-    getStringNumeros("Ingrese el Id ", auxId);
-    while(employee_ControlId(pArrayListEmployee,auxId)==1)
+    getStringNumeros("Ingrese el Id ", auxId);  //Pido al usuario que ingrese el ID
+    while(employee_ControlId(pArrayListEmployee,auxId)==1)  //Controlo que el ID no este previamente dado de alta
     {
         printf("\nEl ID ingresado ya se encuentra dado de alta.");
         getStringNumeros("Ingrese el Id nuevamentea. ", auxId);
     }
-    getValidStringRango("Ingrese nombre: ", "ERROR.Intente nuevamente", auxNombre, 128);
-    getStringNumeros("Ingrese las horas trabajadas: ", auxHorasTrabajadas);
-    getStringNumerosFlotantes("Ingrese el sueldo: ", auxSueldo);
-    nuevoEmpleado = employee_newParametros(auxId, auxNombre, auxHorasTrabajadas, auxSueldo);
-    ll_add(pArrayListEmployee, nuevoEmpleado);
+    getValidStringRango("Ingrese nombre: ", "ERROR.Intente nuevamente", auxNombre, 128);    //Pido al usuario que ingrese el nombre
+    getStringNumeros("Ingrese las horas trabajadas: ", auxHorasTrabajadas);     //Pido al usuario que ingrese las horas trabajadas
+    getStringNumerosFlotantes("Ingrese el sueldo: ", auxSueldo);        //Pido al usuario que ingrese el sueldo
+    nuevoEmpleado = employee_newParametros(auxId, auxNombre, auxHorasTrabajadas, auxSueldo);    //Le asigno al empleado los datos ingresados por la funcion newParametros()
+    ll_add(pArrayListEmployee, nuevoEmpleado);  //Agrego el nuevo empleado a la lista
     printf("\n***EMPLEADO DADO DE ALTA CON EXITO***");
 
     return 1;
@@ -113,11 +113,11 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 
    printf("\n  ID  |     NOMBRE      |  HS |  SUELDO");
    printf("\n---------------------------------------");
-   for(i=0;i<ll_len(pArrayListEmployee);i++)
+   for(i=0;i<ll_len(pArrayListEmployee);i++)    //Recorro la lista
    {
-       this = ll_get(pArrayListEmployee,i);
+       this = ll_get(pArrayListEmployee,i);     //Tomo los elementos de la lista
 
-       printf("\n %4d | %15s | %3d |$ %6.2f",this->id,this->nombre,this->horasTrabajadas,this->sueldo);
+       printf("\n %4d | %15s | %3d |$ %6.2f",this->id,this->nombre,this->horasTrabajadas,this->sueldo);     //Muestro los elementos tomados.
    }
 
 
@@ -159,18 +159,18 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 
     controller_ListEmployee(pArrayListEmployee);
 
-    idEmpleado = getValidInt("\n\nIngrese ID: ","ERROR. Reingrese el ID.");
-    for(i=0;i<ll_len(pArrayListEmployee);i++)
+    idEmpleado = getValidInt("\n\nIngrese ID: ","ERROR. Reingrese el ID.");     //Pido el ID del empleado a modificar.
+    for(i=0;i<ll_len(pArrayListEmployee);i++)   //Recorro la lista
     {
-        this = (Employee*) ll_get(pArrayListEmployee,i);
-        if(this->id == idEmpleado)
+        this = (Employee*) ll_get(pArrayListEmployee,i);    //Tomo los datos de la lista
+        if(this->id == idEmpleado)  //Si el ID de algun empleado coincide con el ID ingresado
         {
-            retorno = 1;
+            retorno = 1;    //Cambio el valor de retorno y rompo la iteracion.
             break;
         }
 
     }
-    if(retorno == 1)
+    if(retorno == 1)    //Si el empleado fue encontrado lo muestro y pregunto que se desea modificar.
     {
         printf("\n     ID |      Nombre  | Hs. Trabajadas |     Sueldo\n\n");
         printf("\n   %4d | %12s |          %4d  | $ %.2f\n",this->id,this->nombre,this->horasTrabajadas,this->sueldo);
@@ -181,7 +181,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 
         switch(opcion)
         {
-        case 1:
+        case 1: //MODIFICACION DEL NOMBRE
             printf("Modificar Nomnbre: \n\n");
             getValidStringRango("Ingrese nuevo nombre: ","ERROR.Solo se admiten letras.\n",nuevo_Nombre,50);
             employee_getNombre(this,nombre);
@@ -197,7 +197,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
             }
             break;
 
-        case 2:
+        case 2:     //MODIFICACION DE LAS HORAS TRABAJADAS
            printf("Modificar Horas Trabajadas: \n\n");
            nuevo_HorasTrabajadas = getValidInt("Ingrese nuevas horas trabajadas: ","ERROR.Solo se admiten numeros.");
            employee_getHorasTrabajadas(this,&horasTrabajadas);
@@ -214,7 +214,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
             }
             break;
 
-        case 3:
+        case 3: //MODIFICACION DEL SUELDO
             printf("Modificar Sueldo: ");
            nuevo_Sueldo = getValidFloat("Ingrese nuevo sueldo: ","ERROR.Solo se admiten numeros.");
            employee_getSueldo(this,&sueldo);
@@ -260,26 +260,26 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     system("cls");
     printf("***BAJA DE EMPLEADO***\n\n");
 
-    controller_ListEmployee(pArrayListEmployee);
+    controller_ListEmployee(pArrayListEmployee); //Muestro los empleados cargados
 
-    idEmpleado = getValidInt("\n\nIngrese ID: ","ERROR. Reingrese el ID.");
-    for(i=0;i<ll_len(pArrayListEmployee);i++)
+    idEmpleado = getValidInt("\n\nIngrese ID: ","ERROR. Reingrese el ID."); //Pido el ID del empleado que se desea dar de baja
+    for(i=0;i<ll_len(pArrayListEmployee);i++)   //Recorro la lista
     {
-        this = (Employee*) ll_get(pArrayListEmployee,i);
-        if(this->id == idEmpleado)
+        this = (Employee*) ll_get(pArrayListEmployee,i);    //Tomo los elementos de la lista
+        if(this->id == idEmpleado)      //Si el Id de algun elemento coincide con el id ingresado
         {
-            retorno = 1;
+            retorno = 1;    //Cambio el retorno a 1;
             break;
         }
     }
-    if(retorno == 1 )
+    if(retorno == 1 )   //Si se encontro el empleado deseado, lo muestro y pregunto si se confirma la BAJA o se cancela.
     {
         printf("\n     ID |      Nombre  | Hs. Trabajadas |     Sueldo\n\n");
         printf("\n   %4d | %12s |          %4d  | $ %.2f\n",this->id,this->nombre,this->horasTrabajadas,this->sueldo);
         confirmacion = getValidChar("Confirmar la modificacion (S/N)? ","ERROR. Ingrese una opcion valida (S/N).",'s','n');
         if(confirmacion == 's')
         {
-            ll_remove(pArrayListEmployee,i);
+            ll_remove(pArrayListEmployee,i);    //Se elimina el empleado.
             printf("\nEmpleado dado de baja con existo.\n\n");
         }
         else
@@ -287,7 +287,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
             printf("\nSe cancelo la baja del empleado.\n\n");
         }
     }
-      if(retorno == 0)
+      if(retorno == 0)  //No se encontro el ID del empleado.
       {
           printf("\nNo hay empleados cargados aun.\n\n");
       }
@@ -317,33 +317,33 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
                 \n5. Salir\
                 \n*****************************************************");
 
-        opcion = getValidInt("\n\nIngrese una opcion: ","\nError al ingresar la opcion.");
+        opcion = getValidInt("\n\nIngrese una opcion: ","\nError al ingresar la opcion.");  //Pregunto por que criterio se desea ordenar la lista.
 
 
            switch(opcion)
            {
-           case 1:
+           case 1: //ORDENAMIENTO POR NOMBRE ASCENDIENTE/DESCENDIENTE.
                system("cls");
                printf("\nORDENAMIENTO POR NOMBRE--> ");
                orden = getValidIntOpcion("\n Ingrese 0 para ordenar de forma ascendente \nIngrese 1 para ordenar de forma descendente.","\n Error. Opcion incorrecta",0,1);
                ll_sort(pArrayListEmployee,employee_sortNombre,orden);
                printf("***SE ORDENO LA LISTA CORRECTAMENTE***");
                break;
-           case 2:
+           case 2:  //ORDENAMIENTO POR ID ASCENDIENTE/DESCENDIENTE.
                 system("cls");
                printf("\nORDENAMIENTO POR id--> ");
                orden = getValidIntOpcion("\n Ingrese 0 para ordenar de forma ascendente \nIngrese 1 para ordenar de forma descendente.","\n Error. Opcion incorrecta",0,1);
                ll_sort(pArrayListEmployee,employee_sortId,orden);
                printf("***SE ORDENO LA LISTA CORRECTAMENTE***");
                break;
-           case 3:
+           case 3:  //ORDENAMIENTO POR HORAS TRABAJADAS ASCENDIENTE/DESCENDIENTE.
                  system("cls");
                printf("\nORDENAMIENTO POR HORAS TRABAJADAS--> ");
                orden = getValidIntOpcion("\n Ingrese 0 para ordenar de forma ascendente \nIngrese 1 para ordenar de forma descendente.","\n Error. Opcion incorrecta",0,1);
                ll_sort(pArrayListEmployee,employee_sortHorasTrabajadas,orden);
                printf("***SE ORDENO LA LISTA CORRECTAMENTE***");
                break;
-           case 4:
+           case 4:  //ORDENAMIENTO POR SUELDO ASCENDIENTE/DESCENDIENTE.
                system("cls");
                printf("\nORDENAMIENTO POR SUELDO--> ");
                orden = getValidIntOpcion("\n Ingrese 0 para ordenar de forma ascendente \nIngrese 1 para ordenar de forma descendente.","\n Error. Opcion incorrecta",0,1);
@@ -374,20 +374,20 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 
     int retorno = 0;
 
-    data = fopen(path, "w");
+    data = fopen(path, "w");    //Abre el archivo en modo de escritura
 
-    if(data != NULL && pArrayListEmployee != NULL)
+    if(data != NULL && pArrayListEmployee != NULL)  //Controlo que el archivo y la lista sean distintos de NULL
     {
-        rewind(data);
-        fprintf(data, "id,nombre,horasTrabajadas,sueldo\n");
+        rewind(data);   //Voy al principio del archivo
+        fprintf(data, "id,nombre,horasTrabajadas,sueldo\n");    //Leo la primera linea
 
-        for(int i=0; i<ll_len(pArrayListEmployee); i++)
+        for(int i=0; i<ll_len(pArrayListEmployee); i++) //Recorro la lista
         {
-            empleado = ll_get(pArrayListEmployee, i);
-            fprintf(data, "%d,%s,%d,%f\n", empleado->id, empleado->nombre, empleado->horasTrabajadas, empleado->sueldo);
+            empleado = ll_get(pArrayListEmployee, i);   //Tomo los elementos de la lista
+            fprintf(data, "%d,%s,%d,%f\n", empleado->id, empleado->nombre, empleado->horasTrabajadas, empleado->sueldo);    //Paso los elementos al archivo.
         }
 
-        printf("\nDatos guardados con exito.\n");
+        printf("\nDatos guardados con exito.\n");   //Informo que se guardaron los datos.
         retorno = 1;
     }
 
@@ -409,15 +409,15 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
     int retorno=-1;
     int cant;
 
-    bin= fopen(path,"wb");
+    bin= fopen(path,"wb");  //Abro el archivo en forma de escritura binaria
 
     if(bin!=NULL && pArrayListEmployee != NULL)
     {
-        rewind(bin);
-        for(int i=0;i<ll_len(pArrayListEmployee);i++)
+        rewind(bin);    //Voy al principio del archivo
+        for(int i=0;i<ll_len(pArrayListEmployee);i++)   //Recorro la lista
         {
-            empleado = ll_get(pArrayListEmployee,i);
-            cant = fwrite(empleado,sizeof(Employee),1,bin);
+            empleado = ll_get(pArrayListEmployee,i);    //tomo los elementos de la lista
+            cant = fwrite(empleado,sizeof(Employee),1,bin); //escribo los elementos en el archivo binario
             retorno = 0;
             if(cant != 1)
             {
