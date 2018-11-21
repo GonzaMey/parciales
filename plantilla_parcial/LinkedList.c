@@ -568,3 +568,26 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 
 }
 
+LinkedList* ll_filter(LinkedList* lista, int (*pFunc)(void*))
+{
+
+        LinkedList* filterList;
+        int i;
+
+        if(lista!= NULL && pFunc != NULL)
+        {
+            filterList = ll_newLinkedList();
+            if(filterList != NULL)
+            {
+                for(i=0;i<ll_len(lista);i++)
+                {
+                    if(pFunc(ll_get(lista,i)))
+                    {
+                        ll_add(filterList,ll_get(lista,i));
+                    }
+                }
+            }
+        }
+        return filterList;
+}
+

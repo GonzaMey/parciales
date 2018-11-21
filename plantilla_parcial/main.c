@@ -17,6 +17,7 @@ int main()
     int flagBin = 0;
 
     LinkedList* listaEmpleados = ll_newLinkedList();
+    LinkedList* listaFiltrada;
 
     do{
         system("cls");
@@ -31,6 +32,7 @@ int main()
                 \n7. Ordenar empleados\
                 \n8. Guardar los datos de los empleados en el archivo data.csv (modo texto)\
                 \n9. Guardar los datos de los empleados en el archivo data.bin (modo binario)\
+                \n10. Filtrar por horas trabajadas\
                 \n10. Salir\
                 \n*****************************************************");
 
@@ -158,8 +160,20 @@ int main()
                         }
                     system("pause");
                     break;
+                case 10:
+                    if(flagText == 1 || flagBin ==1)    //Verifico que haya un archivo cargado
+                    {
+                       listaFiltrada = ll_filter(listaEmpleados,employee_FilterName);
+                       controller_ListEmployee(listaFiltrada);
+                    }
+                    else    //Si no se cargo ningun archivo aviso al usuario.
+                    {
+                        printf("\nAun no se ha abierto ningun archivo.\n");
+                    }
+                    system("pause");
+                    break;
             }
-        }while(option != 10);
+        }while(option != 11);
 
     return 0;
 }

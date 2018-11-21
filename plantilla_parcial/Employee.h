@@ -36,4 +36,7 @@ int employee_sortHorasTrabajadas(void* elemento1, void* elemento2);
 
 int employee_ControlId(LinkedList* pArrayLisEmployee,char* strId);
 
+int employee_FilterHorasTrabajadas(void* elemento);
+int employee_FilterName(void* elemento);
+
 #endif // employee_H_INCLUDED

@@ -332,3 +332,44 @@ int employee_ControlId(LinkedList* pArrayLisEmployee,char* strId)
     return retorno;
 
 }
+
+int employee_FilterHorasTrabajadas(void* elemento)
+{
+   int retorno = 0;
+   Employee* empleado;
+
+   if(elemento != NULL)
+   {
+       empleado = (Employee*) elemento;
+
+       if(empleado->horasTrabajadas>200)
+       {
+           retorno=1;
+       }
+   }
+
+    return retorno;
+}
+
+int employee_FilterName(void* elemento)
+{
+   int retorno = 0;
+   Employee* empleado;
+
+   if(elemento != NULL)
+   {
+       empleado = (Employee*) elemento;
+
+       if(strcmp(empleado->nombre,"C")>0 && strcmp(empleado->nombre,"D")<0)
+       {
+           retorno=1;
+       }
+   }
+
+    return retorno;
+}
+
+
+
+
+
