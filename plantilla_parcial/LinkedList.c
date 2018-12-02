@@ -568,26 +568,34 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 
 }
 
+/** \brief Filtra de la lista bajo un criterio dado
+ *
+ * \param puntero a una LinkedList
+ * \param puntero a una funcion
+ * \return devuelve un puntero a una LinkedList auxiliar con los datos filtrados.
+ *
+ */
+
 LinkedList* ll_filter(LinkedList* lista, int (*pFunc)(void*))
 {
 
         LinkedList* filterList;
         int i;
 
-        if(lista!= NULL && pFunc != NULL)
+        if(lista!= NULL && pFunc != NULL)   //Verifica si la lista original y la funcion son distintos de NULL
         {
-            filterList = ll_newLinkedList();
-            if(filterList != NULL)
+            filterList = ll_newLinkedList();   //Crea una lista auxiliar.
+            if(filterList != NULL)  //verifica que sea distinta de NULL
             {
-                for(i=0;i<ll_len(lista);i++)
+                for(i=0;i<ll_len(lista);i++)    //Recorro la lista original.
                 {
-                    if(pFunc(ll_get(lista,i)))
+                    if(pFunc(ll_get(lista,i)))  //Si se cumple el criterio de la funcion.
                     {
-                        ll_add(filterList,ll_get(lista,i));
+                        ll_add(filterList,ll_get(lista,i)); //Agrega a la lista auxiliar(filterlist) los datos filtrados.
                     }
                 }
             }
         }
-        return filterList;
+        return filterList;  //Devuelve la lista filtrada.
 }
 
